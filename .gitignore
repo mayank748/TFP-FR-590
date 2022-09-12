@@ -1,0 +1,5 @@
+#ignore the text file
+*.txt
+
+#ignore the pdf file
+*.pdf
