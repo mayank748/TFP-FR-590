@@ -1,5 +1,4 @@
-  GNU nano 6.3                                                                                                                                                                                                                                                                                                          demoShell.sh
-#!/bin/bash -x
+##!/bin/bash -x
 numberValue=1
 stringValue="TPF26"
 echo $numberValue
@@ -156,3 +155,27 @@ elif [ $value == 10 ]
 	else
 		echo "inside elif else block"
 fi
+
+echo "*********************"
+#function syntex
+
+#1. Parametarized function
+read -p "Enter the name " empName
+read -p "Enter the dep " depName
+
+function mapDepName(){
+	local eName=$1
+	local dName=$2
+	echo $eName " work's in " $dName "dep"
+}
+
+
+mapDepName $empName $depName
+
+#2. Non parametarized function
+
+function  wlecomeFunction(){
+	echo "Welcome to the game"
+}
+
+wlecomeFunction
