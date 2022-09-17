@@ -160,8 +160,8 @@ echo "*********************"
 #function syntex
 
 #1. Parametarized function
-read -p "Enter the name " empName
-read -p "Enter the dep " depName
+#read -p "Enter the name " empName
+#read -p "Enter the dep " depName
 
 function mapDepName(){
 	local eName=$1
@@ -170,7 +170,7 @@ function mapDepName(){
 }
 
 
-mapDepName $empName $depName
+#mapDepName $empName $depName
 
 #2. Non parametarized function
 
@@ -179,3 +179,44 @@ function  wlecomeFunction(){
 }
 
 wlecomeFunction
+
+echo "********************"
+#Arrays
+declare -a myArray
+
+myArray[0]="one"
+myArray[1]="two"
+myArray[2]="three"
+myArray[3]="four"
+echo ${myArray[3]}
+echo ${myArray[@]} #to get all the values of the array
+echo ${#myArray[@]}
+
+	#iterating an array
+	for((i=0;i<${#myArray[@]};i++))
+	do
+		echo ${myArray[$i]}
+	done
+
+echo "******************"
+#Dictionary
+declare -A myDictionary
+
+myDictionary[Name]="XYZ"
+myDictionary[Age]=23
+myDictionary[Gender]="M"
+
+echo "before deleating the value"
+echo ${myDictionary[@]}
+echo ${myDictionary[Name]}
+echo ${!myDictionary[@]}
+
+echo "After deleating the value"
+unset myDictionary[Gender]
+echo ${myDictionary[@]}
+echo ${!myDictionary[@]}
+
+echo "After updating a value"
+myDictionary[Name]="PQR"
+echo ${myDictionary[@]}
+echo ${#myDictionary[@]}
